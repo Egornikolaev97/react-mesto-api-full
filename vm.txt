@@ -1,45 +1,45 @@
-130.193.37.81
-http://130.193.37.81:3000/users
-ssh roge97@130.193.37.81
-frontend: nikolaev.mesto.nomoredomains.sbs
-http://nikolaev.mesto.nomoredomains.sbs
-backend: api.nikolaev.mesto.nomoredomains.sbs
+84.201.135.21
+http://84.201.135.21:3000/users
+ssh roge97@84.201.135.21
+frontend: roge.nomoredomains.sbs
+http://roge.nomoredomains.sbs
+backend: api.roge.nomoredomains.sbs
 
-1. curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-2. sudo apt install -y nodejs 
-3. wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
-4. echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
-5. sudo apt-get update
-6. sudo apt-get install -y mongodb-org
-7. sudo service mongod start
-8. sudo systemctl enable mongod.service
-9. mongosh
-10. sudo apt install -y git
-11. git --version
-12. npm install
-13. npm start
-14. sudo npm install pm2 -g
-15. pm2 start app.js
-16. pm2 startup
-17.  Примерно To setup the Startup Script, copy/paste the following command:
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt install -y nodejs
+wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+sudo service mongod start
+sudo systemctl enable mongod.service
+mongosh
+sudo apt install -y git
+git --version
+npm install
+npm start
+sudo npm install pm2 -g
+pm2 start app.js
+pm2 startup
+7Примерно To setup the Startup Script, copy/paste the following command:
 sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u praktikum --hp /home/praktikum
-18. pm2 save
-19. sudo apt update
-20. sudo apt install -y nginx
-21. sudo ufw allow 'Nginx Full'
-22. sudo ufw allow OpenSSH
-23. sudo ufw enable
-24. sudo systemctl enable --now nginx
-25.  пропукскаем sudo ln -s /etc/nginx/sites-available/<имя_конфига> /etc/nginx/sites-enabled/<имя_конфига> 
-26. sudo nano /etc/nginx/sites-available/default
-27. /etc/nginx/sites-available/default
-28. sudo nginx -t
-29. nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+pm2 save
+sudo apt update
+sudo apt install -y nginx
+sudo ufw allow 'Nginx Full'
+sudo ufw allow OpenSSH
+sudo ufw enable
+sudo systemctl enable --now nginx
+ропукскаем sudo ln -s /etc/nginx/sites-available/<имя_конфига> /etc/nginx/sites-enabled/<имя_конфига>
+sudo nano /etc/nginx/sites-available/default
+/etc/nginx/sites-available/default
+sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 
 server {
         listen 80;
 
-        server_name api.nikolaev.mesto.nomoredomains.sbs;
+        server_name api.roge.nomoredomains.sbs;
 
         location / {
                 proxy_pass http://localhost:3000;
@@ -54,7 +54,7 @@ server {
 server {
         listen 80;
 
-        server_name api.nikolaev.mesto.nomoredomains.sbs;
+        server_name api.roge.nomoredomains.sbs;
 
         location / {
                 proxy_pass http://localhost:3000;
@@ -72,7 +72,7 @@ server {
         root /home/roge97/react-mesto-api-full/frontend/build;
 
         location / {
-
+                try_files $uri $uri/ /index.html;
         }
 }
 
@@ -88,5 +88,4 @@ JWT_SECTRET = c48c42bd44460b7b293729797983e7cfc896304ebc5e734fcbdb43a5aef5f6e7
 
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'));"
 
-tail -f /var/log/nginx/error.log 
- 
+tail -f /var/log/nginx/error.log
