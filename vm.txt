@@ -1,0 +1,92 @@
+130.193.37.81
+http://130.193.37.81:3000/users
+ssh roge97@130.193.37.81
+frontend: nikolaev.mesto.nomoredomains.sbs
+http://nikolaev.mesto.nomoredomains.sbs
+backend: api.nikolaev.mesto.nomoredomains.sbs
+
+1. curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+2. sudo apt install -y nodejs 
+3. wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+4. echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+5. sudo apt-get update
+6. sudo apt-get install -y mongodb-org
+7. sudo service mongod start
+8. sudo systemctl enable mongod.service
+9. mongosh
+10. sudo apt install -y git
+11. git --version
+12. npm install
+13. npm start
+14. sudo npm install pm2 -g
+15. pm2 start app.js
+16. pm2 startup
+17.  Примерно To setup the Startup Script, copy/paste the following command:
+sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u praktikum --hp /home/praktikum
+18. pm2 save
+19. sudo apt update
+20. sudo apt install -y nginx
+21. sudo ufw allow 'Nginx Full'
+22. sudo ufw allow OpenSSH
+23. sudo ufw enable
+24. sudo systemctl enable --now nginx
+25.  пропукскаем sudo ln -s /etc/nginx/sites-available/<имя_конфига> /etc/nginx/sites-enabled/<имя_конфига> 
+26. sudo nano /etc/nginx/sites-available/default
+27. /etc/nginx/sites-available/default
+28. sudo nginx -t
+29. nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+
+server {
+        listen 80;
+
+        server_name api.nikolaev.mesto.nomoredomains.sbs;
+
+        location / {
+                proxy_pass http://localhost:3000;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+        }
+}
+
+server {
+        listen 80;
+
+        server_name api.nikolaev.mesto.nomoredomains.sbs;
+
+        location / {
+                proxy_pass http://localhost:3000;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+        }
+}
+server {
+        listen 80;
+
+        server_name nikolaev.mesto.nomoredomains.sbs;
+        root /home/roge97/react-mesto-api-full/frontend/build;
+
+        location / {
+
+        }
+}
+
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDE1iUl0xa/BCQmrfHGAEUAl89yzO8p9XWwhYS8/+yjG8NJWdW3HS6xEqVnazFd8nbbD3xZIQ8XqI9vD5Qk5rCE/UtV8wYxE6MaqbbuqYU4jMT+PrWCwgJ1exCZteI67Ew7LoHsoMKkTCI4tMDd/6oj+CDoXMyUIjTbLpQK9HUws0LlxHDPXFgLifvZx6nQ5FPlorzJwbSp8jgPYheQoN5LYwTOUZjSJyfp9Kw6g11bGJWNjsRq5SOP7icKdimfVCnLBV0udAVPWIs4hTbNmfLYJno3ZneV/tGcgedhpOuGuD6aXCUeYRugyB3Broi//32JL3oWJJJON1VcPoiyIeoiBiuzjMalRZ1LjRqg27tb2ntjVnMtFtsBu2T9Q/mxAF+hl4lqQ/d8uulSawlzz7UzQA2RS52bxOahlyPOg0/PcusgAZrMG0WAnePoQlT3/0Um0xoXYqCXEvEgqRGwQaxSdKC1zAOAI1h7SgM7pwlZhBDzwkMMpxQgBwgOxGk0fEckVKKxN3IvEP25tgF9IkYRztL/voMToHkMetLZsZDHK60YsydUKEUpNkWpEO7Fk4CbYgN3QaectTOC0jbYGeOaHfs04Ubs6wzDm2r6noTjZ50ar04TeDfW0TOuZBGrI+tXJiHuPb8r3o0k4K57RCDCt+CRvK8T4GNFV5aBIQvn+w== egornikolaev97@yandex.ru
+
+scp -r ./build/* ssh roge97@51.250.66.19:/home/roge97/react-mesto-api-full/frontend
+
+
+NODE_ENV = production
+JWT_SECTRET = c48c42bd44460b7b293729797983e7cfc896304ebc5e734fcbdb43a5aef5f6e7
+
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'));"
+
+tail -f /var/log/nginx/error.log 
+ 
