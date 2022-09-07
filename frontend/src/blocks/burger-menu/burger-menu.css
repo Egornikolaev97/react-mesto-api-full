@@ -1,0 +1,10 @@
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    border-bottom: 1px solid #545454;
+    padding-bottom: 40px;
+    padding-top: 20px;
+    margin-bottom: 27px;
+    align-items: center;
+    justify-content: center;
+  }

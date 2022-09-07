@@ -1,0 +1,20 @@
+.photo-grid__like {
+    width: 30px;
+    height: 19px;
+    min-width: 22px;
+    background-color: #fff;
+    background-image: url(../../../images/like-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px 19px;
+    transition: opacity .3s linear;
+    border: none;
+    cursor: pointer;
+}
+
+.photo-grid__like:hover {
+    opacity: .5;
+}
+
+
+

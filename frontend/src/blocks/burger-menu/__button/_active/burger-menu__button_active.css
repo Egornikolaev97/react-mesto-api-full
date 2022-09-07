@@ -1,0 +1,8 @@
+.burger-menu__button_active::before {
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 #fff;
+  }
+
+  .burger-menu__button_active::after {
+    transform: translateY(0px) rotate(-45deg);
+  }

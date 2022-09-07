@@ -1,0 +1,11 @@
+.form__input_page {
+    background-color: #000;
+    border-bottom: 2px solid #cccc;
+    color: #cccc;
+}
+
+.form__input_page:focus {
+    outline: none;
+    border-color: #fff;
+    opacity: 0.8;
+}

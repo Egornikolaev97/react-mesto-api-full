@@ -1,0 +1,8 @@
+.photo-grid__like-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-right: 20px; */
+}
+

@@ -1,0 +1,15 @@
+.burger-menu__exit {
+    color: #A9A9A9;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    width: 56px;
+    padding: 0;
+    transition: opacity .2s linear;
+  }
+
+  .burger-menu__exit:hover {
+    opacity: 0.6;
+  }
