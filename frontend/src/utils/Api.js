@@ -9,7 +9,8 @@ class Api {
         this._token = token;
         this._headers = {
           ...this._headers,
-          "authorization" : `Bearer ${token}`
+          "authorization" : `Bearer ${token}`,
+          'Content-Type': 'application/json'
         }
       }
 
@@ -96,7 +97,8 @@ class Api {
 let token = localStorage.getItem('jwt');
 
 const api = new Api({
-    url: 'http://roge.nomoredomains.sbs/',
+    // url: 'http://roge.nomoredomains.sbs/',
+    url: 'http://localhost:3000/',
     headers: {
         'authorization' : `Bearer ${token}`,
         'Content-Type': 'application/json',
