@@ -2,7 +2,7 @@ class Api {
     constructor({ url,headers }) {
         this._url = url;
         this._headers = headers;
-        this._token = null;
+        // this._token = null;
     }
 
     setToken(token) {

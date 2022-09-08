@@ -10,8 +10,8 @@ const handleError = require('./midlewares/handleError');
 const NotFoundError = require('./utils/NotFoundError');
 const { requestLogger, errorLogger } = require('./midlewares/logger');
 
-const { PORT = 3000 } = process.env;
 console.log(process.env.NODE_ENV);
+const { PORT = 3000 } = process.env;
 const app = express();
 mongoose.connect('mongodb://localhost:27017/mestodb');
 
