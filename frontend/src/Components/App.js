@@ -105,6 +105,7 @@ const App = () => {
       .then((res) => {
         if (res.token) {
           localStorage.setItem("jwt", res.token);
+          api.setToken(res.token);
         }
         setLoggedIn(true);
         setUserEmail(email);

@@ -1,5 +1,4 @@
-// export const baseUrl = 'http://localhost:3000';
-export const baseUrl = 'http://roge.nomoredomains.sbs';
+export const baseUrl = 'http://localhost:3000';
 
 const checkResponse = (res) => {
     if (res.ok) {
@@ -18,6 +17,7 @@ const checkResponse = (res) => {
         return fetch(`${baseUrl}/signup`, {
           method: 'POST',
           headers: {
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({ email, password })
@@ -40,7 +40,8 @@ export const checkToken = (token) => {
     return fetch(`${baseUrl}/users/me`, {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        "Content-Type": "application/json",
         "Authorization" : `Bearer ${token}`
       }
     })
