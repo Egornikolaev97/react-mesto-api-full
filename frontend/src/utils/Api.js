@@ -96,8 +96,8 @@ class Api {
 let token = localStorage.getItem('jwt');
 
 const api = new Api({
-    // url: 'http://api.roge.nomoredomains.sbs/',
-    url: 'http://localhost:3000/',
+    url: 'http://api.roge.nomoredomains.sbs/',
+    // url: 'http://localhost:3000/',
     headers: {
         'authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
