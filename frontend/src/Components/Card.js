@@ -3,6 +3,7 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 const Card = ({ card, onCardClick, onCardLike, onCardDelete }) => {
     const currentUser = React.useContext(CurrentUserContext);
+    const { name, link, likes } = card;
 
     const isOwn = card.owner._id === currentUser._id;
     const cardDeleteButtonClassName = `photo-grid__delete ${isOwn ? '' : 'photo-grid__delete_hidden'}`;
@@ -25,13 +26,13 @@ const Card = ({ card, onCardClick, onCardLike, onCardDelete }) => {
     return (
         <div className="photo-grid__item">
             <button type="button" className="photo-grid__show-btn" onClick={handleCardClick}>
-                <img className="photo-grid__image" src={card.link} alt={card.name}/>
+                <img className="photo-grid__image" src={link} alt={name}/>
             </button>
             <div className="photo-grid__info">
-                <h2 className="photo-grid__title">{card.name}</h2>
+                <h2 className="photo-grid__title">{name}</h2>
                 <div className="photo-grid__like-container">
                     <button type="button" className={cardLikeButtonClassName} onClick={handleCardLike}></button>
-                    <span className="photo-grid__like-counter">{card.likes.length}</span>
+                    <span className="photo-grid__like-counter">{likes.length}</span>
                 </div>
                 <button type="button" className={cardDeleteButtonClassName} onClick={handleCardDelete}></button>
             </div>
