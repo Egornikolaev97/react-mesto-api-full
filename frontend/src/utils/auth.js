@@ -8,12 +8,6 @@ const checkResponse = (res) => {
         return Promise.reject(`Ошибка: ${res.status}`);
     }
 }
-
-// const checkResponse = (res) => {
-//     return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
-//     }
-
-
     export const register = ({email, password}) => {
         return fetch(`${baseUrl}/signup`, {
           method: 'POST',

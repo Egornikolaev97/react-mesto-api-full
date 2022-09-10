@@ -5,8 +5,8 @@ const BadRequestError = require('../utils/BadRequestError');
 
 // get all cards
 module.exports.getCards = (req, res, next) => {
-  Card.find({}).sort({ createdAt: -1 })
-    .then((cards) => res.send(cards))
+  Card.find({})
+    .then((cards) => res.send(cards.reverse()))
     .catch(next);
 };
 
