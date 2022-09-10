@@ -15,12 +15,12 @@ const { PORT = 3000 } = process.env;
 const app = express();
 mongoose.connect('mongodb://localhost:27017/mestodb');
 
-app.use(cors());
-
 app.use(requestLogger);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(cors());
 
 app.get('/crash-test', () => {
   setTimeout(() => {
