@@ -1,4 +1,4 @@
-export const baseUrl = 'http://api.roge.nomoredomains.sbs';
+export const baseUrl = 'https://api.roge.nomoredomains.sbs';
 // export const baseUrl = 'http://localhost:3000'
 
 const checkResponse = (res) => {
