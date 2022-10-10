@@ -13,24 +13,29 @@ API https://api.roge.nomoredomains.sbs/
 
 ## Применные знания и технологии: 
 * Верстка: 
-- адаптивная кроссабраузерная вертска с использованием Flexbox и Grid Layout
-- семантическая вертска
-- БЭМ
+  - адаптивная кроссабраузерная вертска с использованием Flexbox и Grid Layout
+  - семантическая вертска
+  - БЭМ
 
 * React: 
-- использование хуков useState и useEffect
-- авторизация с помощью JWT
-- защищенные роуты
+  - использование хуков useState и useEffect
+  - авторизация с помощью JWT
+  - защищенные роуты
 
 * Бэкенд:
-- NodeJS
-- express.js
-- mongoDB
-- Mongoose
+  - NodeJS
+  - express.js
+  - mongoDB
+  - Mongoose
 
 ## Инструкция по установке: 
-
-git clone https://github.com/Egornikolaev97/react-mesto-api-full.git - клонирование репозитория
-npm install - установка зависимостей 
-npm run start - запуск сборки фронтенда
-npm run dev - запуск сборки бэкенда
+```bash
+# клонирование репозитория
+$ git clone https://github.com/Egonikolaev97/react-mesto-api-full.git
+# установка зависимостей
+$ npm install
+# запуск develop-сборки фронтенда
+$ npm run start
+# Запуск develop-сборки бэкенда
+$ npm run dev
+```
