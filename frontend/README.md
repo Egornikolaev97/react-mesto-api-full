@@ -1,37 +1,43 @@
-# Getting Started with Create React App
+# Проектная работа: "Mesto (Auth)". Создана в рамках учебы в [Яндекс.Практикум](https://praktikum.yandex.ru/) на курсе ["Веб-разработчик"](https://praktikum.yandex.ru/web/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание:
 
-## Available Scripts
+"Mesto" - это интерактивная страница, на которой пользователи могут делиться фотографиями. В работе применены расширенные возможности HTML, CSS и JavaScript.
+В данной работе реализован функционал  регистрации и авторизации.
 
-In the project directory, you can run:
+| **GithHub Pages** | [Auth Mesto](https://Egornikolaev97.github.io/react-mesto-auth/) |
+| ----------------- | -------------------------------------------------------------------- |
 
-### `npm start`
+## Примененные знания
+* Верстка: 
+  - адаптивная кроссабраузерная вертска с использованием Flexbox и Grid Layout
+  - семантическая вертска
+  - БЭМ
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* React: 
+  - использование хуков useState и useEffect
+  - авторизация с помощью JWT
+  - защищенные роуты
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Инструкция по установке:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+git clone https://Egornikolaev97.github.io/react-mesto-auth.git
+```
 
-### `npm run build`
+## Будущая доработка проекта будет включать в себя:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Адаптив бургер меню
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Языки:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* JavaScript
+* фреймворк React
 
-### `npm run eject`
+## Макет проектной работы в Figma:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* [Макет](https://www.figma.com/file/5H3gsn5lIGPwzBPby9jAOo/JavaScript.-Sprint-12)
 
 If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
